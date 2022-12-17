@@ -1,13 +1,16 @@
 CREATE TABLE cars (
-car_id NUMBER(4) NOT NULL,
-licence VARCHAR2(10) NOT NULL,
-type VARCHAR2(15) NOT NULL,
-model VARCHAR2(15) NULL,
-colour VARCHAR2(15) NULL,
-purchase_price NUMBER(7,2) NULL,
-purchase_date DATE NOT NULL,
-department_id NUMBER(3)
+    car_id NUMBER(4) NOT NULL,
+    licence VARCHAR2(10) NOT NULL,
+    type VARCHAR2(15) NOT NULL,
+    model VARCHAR2(15) NULL,
+    colour VARCHAR2(15) NULL,
+    purchase_price NUMBER(7,2) NULL,
+    purchase_date DATE NOT NULL,
+    department_id NUMBER(3)
 );
+
+
+
 
 -- Aufbau der cars Tabelle ausgeben
 DESCRIBE cars;
@@ -70,6 +73,10 @@ purchase_date DATE NOT NULL,
 department_id NUMBER(3)
 );
 
+SELECT *
+FROM user_constraints
+WHERE constraint_name LIKE 'CK%';
+
 -- Verwerfen der Tabelle cars
 DROP TABLE cars;
 -- Neuanlegen der Tabelle cars mit
@@ -93,7 +100,7 @@ FROM oehr_employees;
 select * from employeesView;
 
 CREATE OR REPLACE VIEW employeesView AS
-SELECT fi rst_name, last_name, email, phone_number
+SELECT first_name, last_name, email, phone_number
 FROM oehr_employees
 WHERE department_id=60;
 
