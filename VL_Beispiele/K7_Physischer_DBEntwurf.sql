@@ -10,8 +10,6 @@ CREATE TABLE cars (
 );
 
 
-
-
 -- Aufbau der cars Tabelle ausgeben
 DESCRIBE cars;
 

@@ -6,19 +6,19 @@ CREATE TABLE quadrat (
 n int,
 nquadrat int );
 DECLARE
--- Variablendeklaration
-nmax CONSTANT INT:=100;
-i INT:= 1;
+    -- Variablendeklaration
+    nmax CONSTANT INT:=100;
+    i INT:= 1;
 BEGIN
--- Anfang des ausführbaren Abschnitts
--- Durchlaufen der Schleife zum Anlegen der Sätze
-FOR i IN 1..nmax LOOP
-INSERT INTO quadrat
-(n , nquadrat)
-VALUES
-(i , i*i);
-END LOOP;
-COMMIT;
+    -- Anfang des ausführbaren Abschnitts
+    -- Durchlaufen der Schleife zum Anlegen der Sätze
+    FOR i IN 1..nmax LOOP
+        INSERT INTO quadrat
+        (n , nquadrat)
+        VALUES
+        (i , i*i);
+    END LOOP;
+    COMMIT;
 END;
 -- Ende des ausführbaren Abschnitts
 
