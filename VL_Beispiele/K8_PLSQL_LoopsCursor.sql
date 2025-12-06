@@ -23,6 +23,35 @@ END;
 -- Ende des ausführbaren Abschnitts
 
 --------------------------------------
+-- vorhandene Tabelle locations löschen
+DROP TABLE locations;
+
+-- Tabelle locations anlegen
+CREATE TABLE locations(
+    location_id INT, 
+    city varchar2(20)
+);
+
+DECLARE
+-- Variablendeklaration
+    i int:=6;
+BEGIN
+    -- IF Anweisung, je nach Variablenwert i passiert die Magie
+    IF (i>10) THEN
+        NULL;
+    ELSIF (i>5) THEN
+        INSERT INTO locations -- Einfügen
+        (location_id, city)
+        VALUES (i*20, 'STUTTGART'); -- neuer locations
+    ELSE
+        INSERT INTO locations -- Einfügen
+        (location_id, city)
+        VALUES (i*10, 'BOSTON'); -- neuer locations
+    END IF; 
+END;
+
+
+--------------------------------------
 
 DROP TABLE sitzplan;
 
