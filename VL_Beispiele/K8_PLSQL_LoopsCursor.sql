@@ -50,6 +50,37 @@ BEGIN
     END IF; 
 END;
 
+--------------------------------------
+
+DROP TABLE locations; 
+
+CREATE TABLE locations(
+    location_id INT, 
+    city varchar2(20)
+);
+
+DECLARE
+    i INT := 1;
+    max_loops CONSTANT INT := 10;
+BEGIN
+    LOOP
+        EXIT WHEN i > max_loops;
+        INSERT INTO locations
+            (location_id, city)
+        VALUES
+            (i, 'BOSTON'); 
+        
+        -- Variable i wird um 1 erhöht
+        i := i+1; 
+        -- 1. Schleifendurchlauf i :=2
+        -- 2. Schleifendurchlauf i := 3
+        -- ....
+        -- 10. Schleifendurchlauf i := 11
+
+        COMMIT;
+    END LOOP;
+END;
+
 
 --------------------------------------
 
